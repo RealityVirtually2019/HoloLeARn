@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpeechTest : MonoBehaviour {
+public class SpeechTest : MonoBehaviour
+{
 
+	public GameObject cube;
 	// Use this for initialization
 	void Start () 
 	{
@@ -18,6 +20,7 @@ public class SpeechTest : MonoBehaviour {
 
 	public void testtest()
 	{
-		Debug.Log("test complete");
+		cube.GetComponent<MeshRenderer>().material.color = Color.red;
+		
 	}
 }
