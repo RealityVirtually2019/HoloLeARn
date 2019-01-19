@@ -27,7 +27,7 @@ namespace HoloToolkit.Unity
             InstallFail
         }
 
-        private const float TimeOut = 10.0f;
+        private const float TimeOut = 50.0f;
         private const float MaxWaitTime = 20.0f;
 
         // Device Portal API Resources
