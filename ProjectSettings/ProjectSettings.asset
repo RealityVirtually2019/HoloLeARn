@@ -553,7 +553,8 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    14: 
   platformArchitecture: {}
   scriptingBackend:
     Metro: 2
@@ -565,11 +566,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: RVHack2019
   metroPackageVersion: 
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 00d2a41108cfd501
   metroApplicationDescription: RVHack2019
   wsaImages: {}
   metroTileShortName: 
