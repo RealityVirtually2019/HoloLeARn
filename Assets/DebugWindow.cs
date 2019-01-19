@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DebugWindow : MonoBehaviour {
 
-	TextMesh textMesh;
+	public TextMesh textMesh;
 
 	// Use this for initialization
 	void Start()
 	{
-		textMesh = gameObject.GetComponentInChildren<TextMesh>();
+		//textMesh = gameObject.GetComponent<TextMesh>();
 	}
 
 	void OnEnable()
