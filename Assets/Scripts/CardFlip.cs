@@ -4,37 +4,45 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CardFlip : MonoBehaviour
-{
+{		
 	public Button flipButton;
-	
-	public List<GameObject> noteCards;
 
 	public GameObject currCard;
 
-	private int currCardIndex = 0;
+	private int currCardIndex;
 
 	public Animator cardAnimator;
 
 	public bool flipped;
+
+	public CardSwitch cardSwitch;
 	private static readonly int Flipped = Animator.StringToHash("Flipped");
+	
 
 
 	private void Awake()
 	{
 		flipButton.onClick.AddListener(OnClick);
-		cardAnimator = noteCards[currCardIndex].GetComponent<Animator>();
+		cardSwitch = FindObjectOfType<CardSwitch>();
 	}
 
 	// Use this for initialization
 	void Start ()
 	{
-		currCard = noteCards[currCardIndex];
+		currCard = cardSwitch.currCard;
+		cardAnimator = currCard.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update()
 	{
-		
+		if(currCard!=cardSwitch.currCard)
+			currCard = cardSwitch.currCard;
+
+		if (cardAnimator != currCard.GetComponent<Animator>())
+		{
+			cardAnimator = currCard.GetComponent<Animator>();
+		}
 	}
 
 	public void OnClick()
