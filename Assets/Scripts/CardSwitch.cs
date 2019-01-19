@@ -12,7 +12,8 @@ public class CardSwitch : MonoBehaviour
 	public GameObject currCard;
 	public Animator currCardAnimator;
 	public int index;
-	private static readonly int Nexted = Animator.StringToHash("Nexted");
+	public Moved moved;
+
 
 	private void Awake()
 	{
@@ -36,22 +37,35 @@ public class CardSwitch : MonoBehaviour
 
 	void OnNext()
 	{
-		StartCoroutine(Next());
+		if(index <2)
+			StartCoroutine(Next());
 	}
 
 	void OnPrevious()
 	{
-		currCard.SetActive(false);
-		index--;
-		currCard = noteCards[index];
-		currCard.SetActive(true);
-		currCardAnimator = currCard.GetComponent<Animator>();
-		currCardAnimator.SetBool(Nexted,true);
+		if (index > 0)
+		{
+			currCard.SetActive(false);
+			index--;
+			currCard = noteCards[index];
+			currCard.SetActive(true);
+			moved = currCard.GetComponent<Moved>();
+			currCardAnimator = currCard.GetComponent<Animator>();
+			if (moved.up)
+			{
+				currCardAnimator.SetBool("Down", true);
+			}
+		}
+		
 	}
 
 	IEnumerator Next()
 	{
-		currCardAnimator.SetBool("Nexted",true);
+		moved = currCard.GetComponent<Moved>();
+		if (moved.down)
+		{
+			currCardAnimator.SetBool("Up", true);
+		}
 		yield return new WaitForSeconds(.45f);
 		currCard.SetActive(false);
 		index++;

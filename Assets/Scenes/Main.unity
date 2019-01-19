@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 31071583}
   - component: {fileID: 31071582}
   - component: {fileID: 31071581}
+  - component: {fileID: 31071585}
   m_Layer: 0
   m_Name: Card3
   m_TagString: Untagged
@@ -217,6 +218,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 31071579}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &31071585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31071579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db71f50f33d4acd4cbd46177f7f79f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moved: 0
 --- !u!1 &45580865
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,6 +692,7 @@ GameObject:
   - component: {fileID: 440081298}
   - component: {fileID: 440081302}
   - component: {fileID: 440081299}
+  - component: {fileID: 440081303}
   m_Layer: 0
   m_Name: Card1
   m_TagString: Untagged
@@ -771,6 +785,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &440081303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 440081297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db71f50f33d4acd4cbd46177f7f79f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moved: 0
 --- !u!1 &474072341
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +809,7 @@ GameObject:
   - component: {fileID: 474072345}
   - component: {fileID: 474072344}
   - component: {fileID: 474072343}
+  - component: {fileID: 474072347}
   m_Layer: 0
   m_Name: Card2
   m_TagString: Untagged
@@ -875,6 +902,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 474072341}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &474072347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 474072341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db71f50f33d4acd4cbd46177f7f79f45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moved: 0
 --- !u!1001 &683024146
 Prefab:
   m_ObjectHideFlags: 0
