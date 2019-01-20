@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Net.Mime;
 using HoloToolkit.Unity.InputModule;
 using UnityEngine;
 using UnityEngine.UI;

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,10 +7,10 @@ public class CharacterTriggers : MonoBehaviour {
 
     Animator anim;
     AudioSource audioSource;
-    AudioClip greetings, letsGo, stage1_1, stage1_2, stage2_1, stage2_2, stage2_3, positive, negative, noSpeech;
+    public AudioClip greetings, letsGo, stage1_1, stage1_2, stage2_1, stage2_2, stage2_3, positive, negative, noSpeech;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
         greetings   = Resources.Load<AudioClip>("Audio/1Greetings");
@@ -26,66 +27,74 @@ public class CharacterTriggers : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-
+	void Update ()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            Backflip();
+        }
     }
 
-    IEnumerator PlayClip(AudioClip audio)
+    public void PlayClipCall(string name)
     {
-        audioSource.clip = audio;
+        StartCoroutine(PlayClip(name));
+    }
+    IEnumerator PlayClip(string name)
+    {
+        audioSource.clip = Resources.Load(name) as AudioClip;
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);
     }
 
-    void Backflip()
+    public void Backflip()
     {
         anim.SetTrigger("backflip");
     }
-    void CartWheel()
+    public void CartWheel()
     {
         anim.SetTrigger("cartwheel");
     }
-    void Charge()
+    public void Charge()
     {
         anim.SetTrigger("charge");
     }
-    void Defeat()
+    public void Defeat()
     {
         anim.SetTrigger("defeat");
     }
-    void Frontflip()
+    public void Frontflip()
     {
         anim.SetTrigger("frontflip");
     }
-    void HandsForwardGesture()
+    public void HandsForwardGesture()
     {
         anim.SetTrigger("handsForwardGesture");
     }
-    void HappyIdle()
+    public void HappyIdle()
     {
         anim.SetTrigger("happyIdle");
     }
-    void HeadNodYes()
+    public void HeadNodYes()
     {
         anim.SetTrigger("headNodYes");
     }
-    void MacarenaDance()
+    public void MacarenaDance()
     {
         anim.SetTrigger("macarenaDance");
     }
-    void ThoughtfulHeadShake()
+    public void ThoughtfulHeadShake()
     {
         anim.SetTrigger("thoughtfulHeadShake");
     }
-    void VictoryIdle()
+    public void VictoryIdle()
     {
         anim.SetTrigger("victoryIdle");
     }
-    void Wave()
+    public void Wave()
     {
         anim.SetTrigger("wave");
     }
-    void Yelling()
+    public void Yelling()
     {
         anim.SetTrigger("yelling");
     }

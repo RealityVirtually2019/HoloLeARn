@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aaad118bda98a481d80143e21c004e7f
+guid: 5e669c105fed077478225ef0b6dc8fcd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -175,32 +175,12 @@ ModelImporter:
     13700002: Boy01_Brows_Geo
     13700004: Boy01_Eyes_Geo
     13700006: h_Geo
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boy01_Body_MAT
-    second: {fileID: 2100000, guid: a7d7cf3f9a7004a648fecde153329d49, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boy01_Brows_MAT1
-    second: {fileID: 2100000, guid: 0c5c372643461428e95fecd2e37a17b6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boy01_Eyes_MAT1
-    second: {fileID: 2100000, guid: 0c5c372643461428e95fecd2e37a17b6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Boy01_Mouth_MAT1
-    second: {fileID: 2100000, guid: 0c5c372643461428e95fecd2e37a17b6, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
-    materialName: 1
+    materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
