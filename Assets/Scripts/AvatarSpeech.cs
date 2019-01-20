@@ -17,7 +17,8 @@ public class AvatarSpeech : MonoBehaviour
 	public CharacterTriggers triggers;
 
 	public Shrink shrink;
-	
+
+	public GameObject button;
 	// Use this for initialization
 	void Start ()
 	{
@@ -95,6 +96,9 @@ public class AvatarSpeech : MonoBehaviour
 		triggers.PlayClipCall("AfterLastQ");
 		yield return new WaitForSeconds(2f);
 		triggers.Yelling();
+		yield return new WaitForSeconds(7);
+		triggers.MacarenaDance();
+		button.SetActive(true);
 		Debug.Log("You got everything right!");
 	}
 }

@@ -16,12 +16,13 @@ public class IvoCon1 : MonoBehaviour
 		
 	}
 
-	void Start () 
+	private void OnEnable()
 	{
 		triggers.Backflip();
 		StartCoroutine(Grow());
 		StartCoroutine("Wait1");
 	}
+
 	
 	// Update is called once per frame
 	void Update () 

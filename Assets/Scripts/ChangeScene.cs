@@ -7,6 +7,16 @@ public class ChangeScene : MonoBehaviour
 {
 
 	public CharacterTriggers triggers;
+
+	public GameObject card1;
+
+	public GameObject buttons;
+
+	public GameObject menu;
+
+	public GameObject aj;
+
+	public GameObject otheraj;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,13 +27,13 @@ public class ChangeScene : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			SceneManager.LoadScene(2);
+			SceneManager.LoadScene(1);
         }
 	}
 
 	public void changeScene()
 	{
-		SceneManager.LoadScene(2);
+		SceneManager.LoadScene(1);
 	}
 
 	public void StartGame()
@@ -36,7 +46,11 @@ public class ChangeScene : MonoBehaviour
 		triggers.PlayClipCall("LetsGo");
 		triggers.VictoryIdle();
 		yield return new WaitForSeconds(2f);
-		SceneManager.LoadScene(1);
+		aj.SetActive(false);
+		card1.SetActive(true);
+		buttons.SetActive(true);
+		otheraj.SetActive(true);
+		menu.SetActive(false);
 	}
 	
 }

@@ -40,7 +40,7 @@ public class Responses : MonoBehaviour
 			if (gotAmRiv)
 			{
 				fill = true;
-				StartCoroutine("StopFill");
+				//StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.StartQuestion2();
 				avatarSpeech.lookingForFirst = false;
@@ -57,7 +57,7 @@ public class Responses : MonoBehaviour
 			if (gotSA)
 			{
 				fill = true;
-				StartCoroutine("StopFill");
+				//StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.StartQuestion2();
 				avatarSpeech.lookingForFirst = false;
@@ -70,7 +70,7 @@ public class Responses : MonoBehaviour
 		if (avatarSpeech.lookingForSecond)
 		{
 			fill = true;
-			StartCoroutine("StopFill");
+			//StartCoroutine("StopFill");
 			speechInput.StopKeywordRecognizer();
 			avatarSpeech.StartQuestion3();
 			avatarSpeech.lookingForSecond = false;
@@ -86,7 +86,7 @@ public class Responses : MonoBehaviour
 			if(gotOx)
 			{
 				fill = true;
-				StartCoroutine("StopFill");
+				//StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.TriggerEnding();
 				avatarSpeech.lookingForThird = false;
@@ -103,7 +103,7 @@ public class Responses : MonoBehaviour
 			if(got20)
 			{
 				fill = true;
-				StartCoroutine("StopFill");
+				//StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.TriggerEnding();
 				avatarSpeech.lookingForThird = false;
