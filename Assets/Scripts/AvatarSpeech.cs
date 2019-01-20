@@ -43,6 +43,7 @@ public class AvatarSpeech : MonoBehaviour
 	IEnumerator OpeningSpeech()
 	{
 		yield return new WaitForSeconds(1.5f);
+		triggers.Yelling();
 		triggers.PlayClipCall("RiverQuestion");
 		yield return new WaitForSeconds(8f);
 		speechInput.StartKeywordRecognizer();
@@ -56,9 +57,12 @@ public class AvatarSpeech : MonoBehaviour
 
 	IEnumerator SecondQuestion()
 	{
-		Debug.Log("One down, lets keep going!");
+		triggers.HandsForwardGesture();
+		triggers.PlayClipCall("FantasticCut");
 		yield return new WaitForSeconds(2f);
-		Debug.Log("What's the layer of the Rainforest that most birds live in?");
+		triggers.PlayClipCall("BirdQuestion");
+		triggers.Yelling();
+		yield return new WaitForSeconds(9f);
 		speechInput.StartKeywordRecognizer();
 		lookingForSecond = true;
 	}
@@ -70,9 +74,11 @@ public class AvatarSpeech : MonoBehaviour
 
 	IEnumerator ThirdQuestion()
 	{
-		Debug.Log("Thats right!");
-		yield return  new WaitForSeconds(1f);
-		Debug.Log("Alright! Lets finish it off!");
+		triggers.PlayClipCall("OneMoreThing");
+		triggers.VictoryIdle();
+		yield return  new WaitForSeconds(3.1f);
+		triggers.PlayClipCall("LungsCut");
+		triggers.Yelling();
 		Debug.Log("I heard that Amazon Rainforest has a really cool nickname, why??");
 		speechInput.StartKeywordRecognizer();
 		lookingForThird= true;
@@ -85,8 +91,10 @@ public class AvatarSpeech : MonoBehaviour
 
 	IEnumerator Ending()
 	{
-		Debug.Log("You did it!!");
+		triggers.VictoryIdle();
+		triggers.PlayClipCall("AfterLastQ");
 		yield return new WaitForSeconds(2f);
+		triggers.Yelling();
 		Debug.Log("You got everything right!");
 	}
 }

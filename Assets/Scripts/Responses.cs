@@ -17,7 +17,7 @@ public class Responses : MonoBehaviour
 	public bool gotOx;
 	public bool got20;
 	public bool fill;
-	public Image brainFill;
+	
 	
 	
 	// Use this for initialization
@@ -28,10 +28,7 @@ public class Responses : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		if (fill)
-		{
-			brainFill.fillAmount += .003f;
-		}
+		
 	}
 
 	public void Q1SouthAmerica()
@@ -114,11 +111,11 @@ public class Responses : MonoBehaviour
 		}
 	}
 
-	IEnumerator StopFill()
-	{
-		yield return new WaitForSeconds(1.1f);
-		fill = false;
-	}
+//	IEnumerator StopFill()
+//	{
+//		yield return new WaitForSeconds(1.1f);
+//		fill = false;
+//	}
 	
 }
 

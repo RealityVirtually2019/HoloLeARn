@@ -45,8 +45,8 @@ public class IvoCon1 : MonoBehaviour
 		yield return new WaitForSeconds(7);
 		triggers.Charge();
 		triggers.PlayClipCall("ExplainFlashCards");
-		yield return new WaitForSeconds(5.5f);
-		triggers.PlayClipCall("BeBackIn2");
+		yield return new WaitForSeconds(4.2f);
+		triggers.PlayClipCall("BackInAMin");
 		triggers.Frontflip();
 		yield return new WaitForSeconds(1.3f);
 		shrink.shrink = true;

@@ -80,7 +80,7 @@ Material:
     - _AlphaScale: {r: 1, g: 0, b: 0, a: 0}
     - _AmbientColor: {r: 0.125, g: 0.125, b: 0.125, a: 1}
     - _BounceColor: {r: 0.3, g: 0.3, b: 0.3, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.67342794, g: 0.4852941, b: 1, a: 1}
     - _CubemapBalance: {r: 0, g: 1, b: 0, a: 0}
     - _CubemapRoughness: {r: 0, g: 10, b: 0, a: 0}
     - _EmissiveColor: {r: 1, g: 1, b: 1, a: 1}
