@@ -17,7 +17,7 @@ public class Responses : MonoBehaviour
 
 	public bool gotOx;
 	public bool got20;
-
+	public bool fill;
 	public Image brainFill;
 	
 	
@@ -29,7 +29,10 @@ public class Responses : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		if (fill)
+		{
+			brainFill.fillAmount += .003f;
+		}
 	}
 
 	public void Q1SouthAmerica()
@@ -40,7 +43,8 @@ public class Responses : MonoBehaviour
 			gotSA = true;
 			if (gotAmRiv)
 			{
-				
+				fill = true;
+				StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.StartQuestion2();
 				avatarSpeech.lookingForFirst = false;
@@ -56,6 +60,8 @@ public class Responses : MonoBehaviour
 			gotAmRiv = true;
 			if (gotSA)
 			{
+				fill = true;
+				StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.StartQuestion2();
 				avatarSpeech.lookingForFirst = false;
@@ -67,6 +73,8 @@ public class Responses : MonoBehaviour
 	{
 		if (avatarSpeech.lookingForSecond)
 		{
+			fill = true;
+			StartCoroutine("StopFill");
 			speechInput.StopKeywordRecognizer();
 			avatarSpeech.StartQuestion3();
 			avatarSpeech.lookingForSecond = false;
@@ -81,6 +89,8 @@ public class Responses : MonoBehaviour
 			got20 = true;
 			if(gotOx)
 			{
+				fill = true;
+				StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.TriggerEnding();
 				avatarSpeech.lookingForThird = false;
@@ -96,13 +106,23 @@ public class Responses : MonoBehaviour
 			gotOx = true;
 			if(got20)
 			{
+				fill = true;
+				StartCoroutine("StopFill");
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.TriggerEnding();
 				avatarSpeech.lookingForThird = false;
 			}
 		}
 	}
+
+	IEnumerator StopFill()
+	{
+		yield return new WaitForSeconds(1.1f);
+		fill = false;
+	}
 	
 }
+
+
 
 //Mathf.Lerp(progressbarvalue, newValue, Time.deltaTime * speed);
