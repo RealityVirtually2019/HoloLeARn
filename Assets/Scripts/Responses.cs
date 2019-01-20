@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net.Mime;
 using HoloToolkit.Unity.InputModule;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Responses : MonoBehaviour
 {
@@ -12,6 +14,11 @@ public class Responses : MonoBehaviour
 
 	public bool gotSA;
 	public bool gotAmRiv;
+
+	public bool gotOx;
+	public bool got20;
+
+	public Image brainFill;
 	
 	
 	// Use this for initialization
@@ -33,6 +40,7 @@ public class Responses : MonoBehaviour
 			gotSA = true;
 			if (gotAmRiv)
 			{
+				
 				speechInput.StopKeywordRecognizer();
 				avatarSpeech.StartQuestion2();
 				avatarSpeech.lookingForFirst = false;
@@ -67,12 +75,34 @@ public class Responses : MonoBehaviour
 
 	public void Q320()
 	{
-		
+		if (avatarSpeech.lookingForThird)
+		{
+			Debug.Log("20");
+			got20 = true;
+			if(gotOx)
+			{
+				speechInput.StopKeywordRecognizer();
+				avatarSpeech.TriggerEnding();
+				avatarSpeech.lookingForThird = false;
+			}
+		}
 	}
 
 	public void Q3Oxygen()
 	{
-		
+		if (avatarSpeech.lookingForThird)
+		{
+			Debug.Log("oxy");
+			gotOx = true;
+			if(got20)
+			{
+				speechInput.StopKeywordRecognizer();
+				avatarSpeech.TriggerEnding();
+				avatarSpeech.lookingForThird = false;
+			}
+		}
 	}
 	
 }
+
+//Mathf.Lerp(progressbarvalue, newValue, Time.deltaTime * speed);

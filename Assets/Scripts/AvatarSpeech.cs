@@ -63,4 +63,16 @@ public class AvatarSpeech : MonoBehaviour
 		speechInput.StartKeywordRecognizer();
 		lookingForThird= true;
 	}
+
+	public void TriggerEnding()
+	{
+		StartCoroutine(Ending());
+	}
+
+	IEnumerator Ending()
+	{
+		Debug.Log("You did it!!");
+		yield return new WaitForSeconds(2f);
+		Debug.Log("You got everything right!");
+	}
 }
