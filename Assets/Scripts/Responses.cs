@@ -7,6 +7,13 @@ public class Responses : MonoBehaviour
 {
 
 	public SpeechInputSource speechInput;
+
+	public AvatarSpeech avatarSpeech;
+
+	public bool gotSA;
+	public bool gotAmRiv;
+	
+	
 	// Use this for initialization
 	void Start () {
 		
@@ -18,9 +25,35 @@ public class Responses : MonoBehaviour
 		
 	}
 
-	public void A()
+	public void Q1SouthAmerica()
 	{
-		Debug.Log("Thats right!!");
-		speechInput.StopKeywordRecognizer();
+		if (avatarSpeech.lookingForFirst)
+		{
+			Debug.Log("SA");
+			gotSA = true;
+			if (gotAmRiv)
+			{
+				speechInput.StopKeywordRecognizer();
+				avatarSpeech.StartQuestion2();
+				avatarSpeech.lookingForFirst = false;
+			}	
+		}
 	}
+
+	public void Q1AmazonRiver()
+	{
+		if (avatarSpeech.lookingForFirst)
+		{
+			Debug.Log("AR");
+			gotAmRiv = true;
+			if (gotSA)
+			{
+				speechInput.StopKeywordRecognizer();
+				avatarSpeech.StartQuestion2();
+				avatarSpeech.lookingForFirst = false;
+			}
+		}
+	}
+	
+	
 }

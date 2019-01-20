@@ -9,6 +9,8 @@ public class AvatarSpeech : MonoBehaviour
 	public SpeechInputSource speechInput;
 
 	public bool lookingForFirst;
+
+	public bool lookingForSecond = false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -26,8 +28,20 @@ public class AvatarSpeech : MonoBehaviour
 		yield return new WaitForSeconds(1.5f);
 		Debug.Log("Time to learn!!!");
 		yield return new WaitForSeconds(1f);
-		Debug.Log("What was the first letter of the alphabet again?");
+		Debug.Log("Whats the second longest river and where?");
 		speechInput.StartKeywordRecognizer();
 		lookingForFirst = true;
+	}
+
+	public void StartQuestion2()
+	{
+		StartCoroutine(SecondQuestion());
+	}
+
+	IEnumerator SecondQuestion()
+	{
+		Debug.Log("One down, lets keep going!");
+		yield return new WaitForSeconds(2f);
+		Debug.Log("What's the layer of the Rainforest that most birds live in?");
 	}
 }

@@ -431,12 +431,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Keywords:
-  - Keyword: Letter A
+  - Keyword: Amazon River
     Response:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1854578667}
-          m_MethodName: A
+          m_MethodName: Q1AmazonRiver
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  - Keyword: South America
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1854578667}
+          m_MethodName: Q1SouthAmerica
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -464,7 +481,9 @@ MonoBehaviour:
   PersistentKeywords: 0
   RecognizerStart: 1
   Keywords:
-  - Keyword: Letter A
+  - Keyword: Amazon River
+    KeyCode: 13
+  - Keyword: South America
     KeyCode: 13
   recognitionConfidenceLevel: 2
 --- !u!4 &1249355555
@@ -669,6 +688,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speechInput: {fileID: 1249355554}
+  avatarSpeech: {fileID: 1852948621}
+  gotSA: 0
+  gotAmRiv: 0
 --- !u!4 &1854578668
 Transform:
   m_ObjectHideFlags: 0

@@ -61,17 +61,20 @@ public class CardSwitch : MonoBehaviour
 
 	IEnumerator Next()
 	{
-		moved = currCard.GetComponent<Moved>();
-		if (moved.down)
+		if (index < 2)
 		{
-			currCardAnimator.SetBool("Up", true);
+			moved = currCard.GetComponent<Moved>();
+			if (moved.down)
+			{
+				currCardAnimator.SetBool("Up", true);
+			}
+			yield return new WaitForSeconds(.45f);
+			currCard.SetActive(false);
+			index++;
+			currCard = noteCards[index];
+			currCard.SetActive(true);
+			currCardAnimator = currCard.GetComponent<Animator>();	
 		}
-		yield return new WaitForSeconds(.45f);
-		currCard.SetActive(false);
-		index++;
-		currCard = noteCards[index];
-		currCard.SetActive(true);
-		currCardAnimator = currCard.GetComponent<Animator>();
 	}
 
 
