@@ -54,6 +54,25 @@ public class Responses : MonoBehaviour
 			}
 		}
 	}
-	
+
+	public void Q2Canopy()
+	{
+		if (avatarSpeech.lookingForSecond)
+		{
+			speechInput.StopKeywordRecognizer();
+			avatarSpeech.StartQuestion3();
+			avatarSpeech.lookingForSecond = false;
+		}
+	}
+
+	public void Q320()
+	{
+		
+	}
+
+	public void Q3Oxygen()
+	{
+		
+	}
 	
 }

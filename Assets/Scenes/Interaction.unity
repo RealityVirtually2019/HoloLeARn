@@ -465,6 +465,23 @@ MonoBehaviour:
           m_CallState: 2
       m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
+  - Keyword: Canopy Layer
+    Response:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1854578667}
+          m_MethodName: Q2Canopy
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
   IsGlobalListener: 1
   PersistentKeywords: 0
 --- !u!114 &1249355554
@@ -482,9 +499,11 @@ MonoBehaviour:
   RecognizerStart: 1
   Keywords:
   - Keyword: Amazon River
-    KeyCode: 13
+    KeyCode: 49
   - Keyword: South America
-    KeyCode: 13
+    KeyCode: 50
+  - Keyword: Canopy Layer
+    KeyCode: 51
   recognitionConfidenceLevel: 2
 --- !u!4 &1249355555
 Transform:
@@ -660,6 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speechInput: {fileID: 1249355554}
   lookingForFirst: 0
+  lookingForSecond: 0
 --- !u!1 &1854578666
 GameObject:
   m_ObjectHideFlags: 0

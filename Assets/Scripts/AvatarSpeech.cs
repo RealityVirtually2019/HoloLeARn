@@ -11,6 +11,8 @@ public class AvatarSpeech : MonoBehaviour
 	public bool lookingForFirst;
 
 	public bool lookingForSecond = false;
+	
+	public bool lookingForThird = false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -43,5 +45,22 @@ public class AvatarSpeech : MonoBehaviour
 		Debug.Log("One down, lets keep going!");
 		yield return new WaitForSeconds(2f);
 		Debug.Log("What's the layer of the Rainforest that most birds live in?");
+		speechInput.StartKeywordRecognizer();
+		lookingForSecond = true;
+	}
+
+	public void StartQuestion3()
+	{
+		StartCoroutine(ThirdQuestion());
+	}
+
+	IEnumerator ThirdQuestion()
+	{
+		Debug.Log("Thats right!");
+		yield return  new WaitForSeconds(1f);
+		Debug.Log("Alright! Lets finish it off!");
+		Debug.Log("I heard that Amazon Rainforest has a really cool nickname, why??");
+		speechInput.StartKeywordRecognizer();
+		lookingForThird= true;
 	}
 }
