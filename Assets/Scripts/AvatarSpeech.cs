@@ -13,9 +13,16 @@ public class AvatarSpeech : MonoBehaviour
 	public bool lookingForSecond = false;
 	
 	public bool lookingForThird = false;
+	
+	public CharacterTriggers triggers;
+
+	public Shrink shrink;
+	
 	// Use this for initialization
 	void Start ()
 	{
+		triggers.Backflip();
+	
 		StartCoroutine(OpeningSpeech());
 	}
 	
@@ -25,12 +32,19 @@ public class AvatarSpeech : MonoBehaviour
 		
 	}
 
+	IEnumerator StopGrow()
+	{
+		yield return new WaitForSeconds(5.5f);
+		shrink.grow = true;
+		yield return new WaitForSeconds(2f);
+		shrink.grow =false;
+	}
+
 	IEnumerator OpeningSpeech()
 	{
 		yield return new WaitForSeconds(1.5f);
-		Debug.Log("Time to learn!!!");
-		yield return new WaitForSeconds(1f);
-		Debug.Log("Whats the second longest river and where?");
+		triggers.PlayClipCall("RiverQuestion");
+		yield return new WaitForSeconds(8f);
 		speechInput.StartKeywordRecognizer();
 		lookingForFirst = true;
 	}

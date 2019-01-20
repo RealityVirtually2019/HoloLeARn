@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IvoCon1 : MonoBehaviour
 {
 
-	public CharacterTriggers triggers; 
+	public CharacterTriggers triggers;
+
+	public Shrink shrink;
 	// Use this for initialization
 
 	private void Awake()
@@ -16,6 +19,7 @@ public class IvoCon1 : MonoBehaviour
 	void Start () 
 	{
 		triggers.Backflip();
+		StartCoroutine(Grow());
 		StartCoroutine("Wait1");
 	}
 	
@@ -25,6 +29,14 @@ public class IvoCon1 : MonoBehaviour
 		
 	}
 
+	IEnumerator Grow()
+	{
+		yield return new WaitForSeconds(.7f);
+		shrink.grow = true;
+		yield return new WaitForSeconds(2f);
+		shrink.grow =false;
+	}
+	
 	IEnumerator Wait1()
 	{
 		yield return new WaitForSeconds(3f);
@@ -32,5 +44,11 @@ public class IvoCon1 : MonoBehaviour
 		triggers.Yelling();
 		yield return new WaitForSeconds(7);
 		triggers.Charge();
+		triggers.PlayClipCall("ExplainFlashCards");
+		yield return new WaitForSeconds(5.5f);
+		triggers.PlayClipCall("BeBackIn2");
+		triggers.Frontflip();
+		yield return new WaitForSeconds(1.3f);
+		shrink.shrink = true;
 	}
 }
